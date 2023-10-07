@@ -8,7 +8,7 @@ class Profile(models.Model):
         upload_to='images/', default=''
     )
     bio = models.TextField(blank=True, null=True)
-    owner = models.OneToOneField(User, on_delete=models.CASCADE)
+    owner = models.OneToOneField(User, on_delete=models.CASCADE, related_name="profile")
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 

@@ -10,7 +10,7 @@ class Instructor(models.Model):
         ACTIVE = "active"
         INACTIVE = "inactive"
 
-    profile = models.OneToOneField(Profile, on_delete=models.CASCADE)
+    profile = models.OneToOneField(Profile, on_delete=models.CASCADE, related_name="instructor")
     slug = models.SlugField(max_length=200)
     status = models.CharField(max_length=50, choices=Status.choices, default=Status.PENDING)
     created_at = models.DateTimeField(auto_now_add=True)
