@@ -20,4 +20,4 @@ class Instructor(models.Model):
         ordering = ['-created_at']
 
     def __str__(self):
-        return f"{self.owner}'s instructor profile"
+        return f"{self.profile}'s instructor profile"
