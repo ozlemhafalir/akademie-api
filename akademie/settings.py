@@ -44,6 +44,7 @@ if 'DEV' not in os.environ:
 REST_AUTH = {
     'USER_DETAILS_SERIALIZER': 'akademie.serializers.CurrentUserSerializer',
     'USE_JWT': True,
+    'JWT_AUTH_HTTPONLY': False,
     'JWT_AUTH_SECURE': True,
     'JWT_AUTH_COOKIE': 'my-app-auth',
     'JWT_AUTH_REFRESH_COOKIE': 'my-refresh-token',
