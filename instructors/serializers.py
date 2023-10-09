@@ -3,8 +3,11 @@ from instructors.models import Instructor
 
 
 class InstructorSerializer(serializers.ModelSerializer):
-    profile_image = serializers.ReadOnlyField(source='profile.image', allow_null=True)
-    title = serializers.ReadOnlyField(source='profile.user.username')
+    profile_image = serializers.SerializerMethodField()
+    title = serializers.ReadOnlyField(source='profile.owner.username')
+
+    def get_profile_image(self, obj):
+        return obj.profile.image if obj.profile.image else None
     class Meta:
         model = Instructor
         fields = [
