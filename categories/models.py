@@ -7,7 +7,7 @@ class Category(models.Model):
     slug = models.SlugField(max_length=200)
     name = models.CharField(max_length=200)
     image = models.ImageField(
-        upload_to='images/', default='category_default'
+        upload_to='images/', default='../category_default'
     )
     parent = models.ForeignKey("self", blank=True, null=True, related_name="children", on_delete=models.SET_NULL)
     created_at = models.DateTimeField(auto_now_add=True)
